@@ -3,7 +3,7 @@ import '../../../models/Product.dart';
 import '../../../screens/details/details_screen.dart';
 
 import '../../../size_config.dart';
-import 'product_card.dart';
+import './product_card.dart';
 
 class RecommandProducts extends StatelessWidget {
   const RecommandProducts({
@@ -32,16 +32,18 @@ class RecommandProducts extends StatelessWidget {
           childAspectRatio: 0.693,
         ),
         itemBuilder: (context, index) => ProductCard(
-            product: products[index],
-            press: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => DetailsScreen(
-                      product: products[index],
-                    ),
-                  ));
-            }),
+          product: products[index],
+          press: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => DetailsScreen(
+                  product: products[index],
+                ),
+              ),
+            );
+          },
+        ),
       ),
     );
   }

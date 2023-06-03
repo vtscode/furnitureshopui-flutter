@@ -62,7 +62,7 @@ class ProductDescription extends StatelessWidget {
                   ),
                   backgroundColor: kPrimaryColor,
                 ),
-                onPressed: press,
+                onPressed: () => press(),
                 child: Text(
                   "Add to Cart",
                   style: TextStyle(

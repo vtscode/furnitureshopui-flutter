@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:furniture_app/constants.dart';
-import 'package:furniture_app/models/Product.dart';
-import 'package:furniture_app/size_config.dart';
+import '../../../constants.dart';
+import '../../../models/Product.dart';
+import '../../../size_config.dart';
 
 import 'product_description.dart';
 import 'product_info.dart';
@@ -10,7 +10,7 @@ import 'product_info.dart';
 class Body extends StatelessWidget {
   final Product product;
 
-  const Body({Key key, this.product}) : super(key: key);
+  const Body({super.key, required this.product});
   @override
   Widget build(BuildContext context) {
     double defaultSize = SizeConfig.defaultSize;

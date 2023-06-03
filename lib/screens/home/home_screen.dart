@@ -5,13 +5,15 @@ import '../../../screens/home/components/body.dart';
 import '../../../size_config.dart';
 
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     // It help us to  make our UI responsive
     SizeConfig().init(context);
     return Scaffold(
       appBar: buildAppBar(),
-      body: Body(),
+      body: const Body(),
     );
   }
 
@@ -24,7 +26,7 @@ class HomeScreen extends StatelessWidget {
         ),
         onPressed: () {},
       ),
-      actions: <Widget>[
+      actions: [
         IconButton(
           icon: SvgPicture.asset(
             "assets/icons/scan.svg",
@@ -32,7 +34,7 @@ class HomeScreen extends StatelessWidget {
           ),
           onPressed: () {},
         ),
-        Center(
+        const Center(
           child: Text(
             "Scan",
             style: TextStyle(color: kTextColor, fontWeight: FontWeight.bold),

@@ -19,7 +19,7 @@ class ProductCard extends StatelessWidget {
   Widget build(BuildContext context) {
     double defaultSize = SizeConfig.defaultSize;
     return GestureDetector(
-      onTap: press,
+      onTap: () => press(),
       child: Container(
         width: defaultSize * 14.5, //145
         decoration: BoxDecoration(
@@ -47,7 +47,7 @@ class ProductCard extends StatelessWidget {
               ),
               SizedBox(height: defaultSize / 2),
               Text("\$${product.price}"),
-              Spacer(),
+              const Spacer(),
             ],
           ),
         ),

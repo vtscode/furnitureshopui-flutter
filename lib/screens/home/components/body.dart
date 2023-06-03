@@ -18,20 +18,20 @@ class Body extends StatelessWidget {
       child: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
+          children: [
             Padding(
               padding: EdgeInsets.all(defaultSize * 2), //20
-              child: TitleText(
+              child: const TitleText(
                 title: "Browse by Categories",
               ),
             ),
             FutureBuilder(
               future: fetchCategories(),
               builder: (context, snapshot) => snapshot.hasData
-                  ? Categories(categories: snapshot.data as )
+                  ? Categories(categories: snapshot.data!)
                   : Center(child: Image.asset("assets/ripple.gif")),
             ),
-            Divider(height: 5),
+            const Divider(height: 5),
             Padding(
               padding: EdgeInsets.all(defaultSize * 2), //20
               child: TitleText(title: "Recommands For You"),
@@ -41,8 +41,7 @@ class Body extends StatelessWidget {
               future: fetchProducts(),
               builder: (context, snapshot) {
                 return snapshot.hasData
-                    ? RecommandProducts(
-                        products: snapshot.data as List<dynamic>)
+                    ? RecommandProducts(products: snapshot.data!)
                     : Center(child: Image.asset('assets/ripple.gif'));
               },
             ),
